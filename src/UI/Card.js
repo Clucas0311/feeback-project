@@ -21,7 +21,7 @@ Card.defaultProps = {
 };
 
 Card.propTypes = {
-  chidlren: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Card;
