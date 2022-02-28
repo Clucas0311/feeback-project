@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import RatingSelect from "./RatingSelect";
 
-const FeedbackForm = ({ onAdd }) => {
+const FeedbackForm = () => {
+  const { onAdd } = useContext(FeedbackContext);
+
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [rating, setRating] = useState(10);
