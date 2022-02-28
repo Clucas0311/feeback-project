@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import FeedbackContext from "../context/FeedbackContext";
 
-const FeedbackStats = ({ feedback }) => {
+const FeedbackStats = () => {
+  const { feedback } = useContext(FeedbackContext);
   let average =
     feedback.reduce((prev, curr) => {
       return prev + curr.rating;
