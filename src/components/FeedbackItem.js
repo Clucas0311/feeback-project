@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaTimes } from "react-icons/fa";
 import PropTypes from "prop-types";
+import FeedbackContext from "../context/FeedbackContext";
 
 import Card from "../UI/Card";
 
-const FeedbackItem = ({ item, onDelete }) => {
+const FeedbackItem = ({ item }) => {
+  const { onDelete } = useContext(FeedbackContext);
+
   const handleDelete = () => {
     onDelete(item.id);
   };

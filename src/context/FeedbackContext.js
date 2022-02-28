@@ -10,8 +10,17 @@ export const FeedbackProvider = ({ children }) => {
       rating: 10,
     },
   ]);
+
+  const deleteFeedback = (id) => {
+    if (window.confirm("Are you sure you want to delete?")) {
+      setFeedback(feedback.filter((item) => item.id !== id));
+    }
+  };
+
   return (
-    <FeedbackContext.Provider value={{ feedback: feedback }}>
+    <FeedbackContext.Provider
+      value={{ feedback: feedback, onDelete: deleteFeedback }}
+    >
       {children}
     </FeedbackContext.Provider>
   );
