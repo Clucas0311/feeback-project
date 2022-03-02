@@ -1,16 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import RatingSelect from "./RatingSelect";
 
 const FeedbackForm = () => {
-  const { onAdd } = useContext(FeedbackContext);
-
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [rating, setRating] = useState(10);
   const [message, setMessage] = useState("");
+
+  const { onAdd, feedbackEdit } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    if (feedbackEdit.edit) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
 
   const handleTextChange = (event) => {
     // If we have no text disable the button
