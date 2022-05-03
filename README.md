@@ -1,7 +1,4 @@
-A Feedback Application primarily used to work on react fundamentals, with hooks. In this project, I used useContext, useReducer to help manage state globally. I also used forms and JSON server to add feedback items as well as remove items. This project also use Material UI and CSS for styling purposes. 
-
-
-
+A CustomerFeedback Application primarily used to work on react fundamentals, with hooks. In this project, I focused on forms, event handlers and/or lifestyle events. I used useContext, useReducer to help manage state globally. I also used JSON server to add feedback items as well as remove items. This project also uses Material UI and CSS for styling purposes. 
 
 
 # Getting Started with Create React App
